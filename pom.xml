@@ -17,8 +17,36 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
+  
+    <profiles>
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <!-- Optional URL to server. Default value is http://localhost:9099 -->
+                <sonar.host.url>
+                  http://localhost:9099
+              
+                </sonar.host.url>
+                 <sonar.token>sqp_7150a7d72c6ff00614c28783fcefd6bbd1e927fb</sonar.token> 
+<!-- <sonar.login>admin</sonar.login> -->
+<!-- <sonar.password>SkAtausSamad@21</sonar.password> -->
+
+               
+            </properties>
+        </profile>
+     </profiles>
 
   <dependencies>
+    <!-- https://mvnrepository.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin -->
+<dependency>
+    <groupId>org.sonarsource.scanner.maven</groupId>
+    <artifactId>sonar-maven-plugin</artifactId>
+    <version>3.9.1.2184</version>
+</dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
